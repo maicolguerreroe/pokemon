@@ -1,0 +1,19 @@
+<table>
+    <thead>
+        <tr>
+            <th *ngFor="let column of columns">{{column.descripcion}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pokemon of pokemons">
+            <td class="name">{{pokemon.name}}</td>
+            <td class="text-center"><img width="50" [src]="pokemon.image" alt=""></td>
+            <td class="text-center">{{pokemon.attack}}</td>
+            <td class="text-center">{{pokemon.defense}}</td>
+            <td class="text-center accion">
+                <i id="edit" (click)="editItem(pokemon)" class="icon-action fa fa-edit"></i> &nbsp; &nbsp;
+                <i id="delete" (click)="deleteItem(pokemon.id)" class="icon-action fa fa-trash-alt"></i>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,73 @@
+<form [formGroup]="itemForm">
+    <div class="formulario">
+        <div class="text-center">
+            <h4 class="title">{{ edit ? 'Editar pokemon' : 'Crear pokemon' }}</h4>
+        </div>
+        <div class="mb-20">
+            <div class="aling-items">
+                <div class="aling-items col-6 mb-l-20">
+                    <div class="descripcion">
+                        <label for="name">Nombre: </label>
+                    </div>
+                    <div>
+                        <input formControlName="name" type="text" class="form-control" id="name" placeholder="Nombre">
+                    </div>
+                </div>
+                <div class="aling-items col-6">
+                    <div class="descripcion">
+                        <label for="ataque">Ataque: </label>
+                    </div>
+                    <div>
+                        <input formControlName="attack" min="0" max="100" type="range" class="form-control" id="ataque">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-20">
+            <div class="aling-items">
+                <div class="aling-items col-6 mb-l-20">
+                    <div class="descripcion">
+                        <label for="image">Imagen: </label>
+                    </div>
+                    <div>
+                        <input type="text" formControlName="image" class="form-control" id="image" placeholder="Imagen">
+                    </div>
+                </div>
+                <div class="aling-items col-6">
+                    <div class="descripcion">
+                        <label for="defensa">Defensa: </label>
+                    </div>
+                    <div>
+                        <input formControlName="defense" min="0" max="100" type="range" class="form-control"
+                            id="defensa">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="aling-items">
+                <div class="aling-items col-6 mb-l-20">
+                    <div class="descripcion">
+                        <label for="image">Tipo: </label>
+                    </div>
+                    <div>
+                        <input type="text" formControlName="type" class="form-control" id="tipo" placeholder="Tipo">
+                    </div>
+                </div>
+                <div class="aling-items col-6">
+                    <div class="descripcion">
+                        <label for="defensa">HP: </label>
+                    </div>
+                    <div>
+                        <input formControlName="hp" min="0" max="100" type="range" class="form-control" id="hp">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-30 buttons">
+            <button id="guardar" [disabled]="itemForm.invalid" (click)="saveItem()" class="btn-primary"> <i
+                    class="fa fa-save"></i>&nbsp;Guardar</button>
+            <button id="cancelar" (click)="cancel()" class="btn-primary"><i class="fa fa-times"></i>&nbsp;Cancelar</button>
+        </div>
+    </div>
+</form>

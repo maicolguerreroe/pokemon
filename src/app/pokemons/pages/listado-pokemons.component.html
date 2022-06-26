@@ -1,0 +1,38 @@
+<div class="contenedor">
+    <div class="" >
+        <div>
+            <h4 class="title">Listado de pokemon</h4>
+        </div>
+        <div class="box">
+            <div class="container-1">
+                <span class="icon"><i class="fa fa-search"></i></span>
+                <input (keyup)="searchPokemon($event)" type="search" id="search" placeholder="Buscar" />
+            </div>
+            <div class="nuevo">
+                <button (click)="createPokemnon()" class="btn">
+                    <i class="icon fas fa-plus"></i>Nuevo
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="table">
+        <app-table-pokemon 
+            (deletePokemon)="deletePokemon($event)" 
+            (editPokemon)="editPokemon($event)" 
+            [columns]="columns" 
+            [pokemons]="pokemons"> 
+        </app-table-pokemon>
+    </div>
+
+    <ng-container *ngIf="edit || create">
+        <app-formulario-pokemon id="formulario"
+            [edit]="edit"
+            [create]="create"
+            [itemForm]="itemForm"
+            (savePokemon)="savePokemon()"
+            (cancelar)="cancelar()">
+        </app-formulario-pokemon>
+    </ng-container>
+    
+</div>
+
