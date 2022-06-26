@@ -73,12 +73,14 @@ export class ListadoPokemonsComponent implements OnInit {
     this.edit = true;
     this.create = false;
     this.pokemonService.editPokemon(pokemon);
+    location.hash = "#formulario";
   }
 
   createPokemnon() {
     this.create = true;
     this.edit = false;
     this.pokemonService.createPokemon();
+    location.hash = "#formulario";
   }
 
   deletePokemon(id: number) { 
@@ -99,5 +101,4 @@ export class ListadoPokemonsComponent implements OnInit {
       this.pokemons = this.pokemonCopied;
     }
   }
-
 }

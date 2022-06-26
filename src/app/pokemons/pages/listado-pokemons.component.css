@@ -100,3 +100,15 @@ button .icon {
         width: 200px;
     }
 }
+
+@media only screen and (max-width:350px) {
+    .container-1 input#search {
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width:292px) {
+    .container-1 input#search {
+        width: 100px;
+    }
+}

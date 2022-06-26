@@ -25,13 +25,15 @@
     </div>
 
     <ng-container *ngIf="edit || create">
-        <app-formulario-pokemon id="formulario"
-            [edit]="edit"
-            [create]="create"
-            [itemForm]="itemForm"
-            (savePokemon)="savePokemon()"
-            (cancelar)="cancelar()">
-        </app-formulario-pokemon>
+        <div id="formulario">
+            <app-formulario-pokemon 
+                [edit]="edit"
+                [create]="create"
+                [itemForm]="itemForm"
+                (savePokemon)="savePokemon()"
+                (cancelar)="cancelar()">
+            </app-formulario-pokemon>
+        </div>
     </ng-container>
     
 </div>

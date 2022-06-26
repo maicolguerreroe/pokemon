@@ -26,3 +26,24 @@ table th, td {
 .name {
     text-transform: capitalize;
 }
+
+@media only screen and (max-width:942px) {
+    img {
+        width: 35px;
+    }
+
+    table {
+        max-width: 100%;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    table {
+        font-size: 9px;
+    }
+
+    img {
+        width: 25px;
+    }
+}
