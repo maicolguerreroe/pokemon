@@ -48,7 +48,7 @@ export class ListadoPokemonsComponent implements OnInit {
   savePokemon() {
     if (this.create) { 
       this.pokemonService.savePokemon().subscribe(data => {
-        this.initData();
+        this.pokemons.push(data);
         this.edit = false;
         this.create = false;
         alert(`Pokemon ${data.name} creado correctamente`);
@@ -56,7 +56,12 @@ export class ListadoPokemonsComponent implements OnInit {
     }
     else if (this.edit) {
       this.pokemonService.updatePokemon().subscribe(data => {
-        this.initData();
+        this.pokemons.map((pokemon, index) => {
+          if (pokemon.id === data.id) {
+            this.pokemons[index] = data;
+          }
+        });
+
         this.edit = false;
         this.create = false;
         alert(`Pokemon ${data.name} actualizado correctamente`);
@@ -91,7 +96,7 @@ export class ListadoPokemonsComponent implements OnInit {
       });
     }
     else {
-      this.initData();
+      this.pokemons = this.pokemonCopied;
     }
   }
 
